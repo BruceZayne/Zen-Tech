@@ -1,18 +1,22 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+
 * {
   text-decoration: none;
-}
-body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: "Poppins";
 }
-.vision {
-  padding: 50px;
-  text-align: center;
-  font-family: "Poppins";
+
+.bg {
+  background-image: url(/img/bg-1.jpg);
+  background-repeat: no-repeat;
+  background-size: 2000px;
 }
 .navbar {
-  background-color: #2ddfc1;
+  background-color: #2d9edf89;
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   padding-right: 15px;
   padding-left: 15px;
@@ -22,10 +26,10 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.logo a {
-  color: white;
-  font-size: 35px;
-  font-weight: 600;
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 li {
   list-style: none;
@@ -37,32 +41,416 @@ li a {
   font-weight: bold;
   margin-right: 25px;
 }
-button {
-  background-color: azure;
-  margin-left: 10px;
-  border-radius: 10px;
-  padding: 10px;
-  width: 90px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: normal;
+
+.contact {
+  position: relative;
+  min-height: 100vh;
+  padding: 50px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url(/img/contact-bg.jpg);
+  background-size: cover;
 }
-button a {
-  color: black;
-  font-weight: bold;
-  font-size: 15px;
+.contact .content {
+  max-width: 800px;
+  text-align: center;
 }
 
-#logo-welcome {
-  font-size: 50px;
-  font-weight: 600;
-  color: #2ddfc1;
-  text-align: center;
-  margin-top: 100px;
+.contact .content h2 {
+  font-size: 36px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.contact .content p {
+  color: #fff;
+  font-weight: 300;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.container .contactInfo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container .contactInfo .box {
+  position: relative;
+  padding: 20px 0;
+  display: flex;
+}
+.container .contactInfo .box .icon {
+  min-width: 60px;
+  height: 60px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 22px;
+}
+
+.container .contactInfo .box .text {
+  display: flex;
+  margin-left: 20px;
+  font-size: 16px;
+  flex-direction: column;
+  color: #fff;
+  font-weight: 200;
+}
+
+.container .contactInfo .box .text h3 {
+  color: #00bcd4;
+  font-weight: 500;
+}
+
+.contactForm {
+  width: 40%;
+  padding: 40px;
+  background: #fff;
 }
 
 footer {
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
+}
+/*new code*/
+
+span {
+  font-size: 12px;
+}
+
+a {
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 15px 0;
+}
+
+button {
+  font-family: "Poppins", sans-serif;
+  border-radius: 20px;
+  border: 1px solid #a1c0c1;
+  background-color: #4c7a74;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus {
+  outline: none;
+}
+
+button.ghost {
+  background-color: transparent;
+  border-color: #ffffff;
+}
+
+form {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+
+input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+.signcontainer {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+}
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.container.right-panel-active .sign-in-container {
+  transform: translateX(100%);
+}
+
+.sign-up-container {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.container.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
+}
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.container.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+.overlay {
+  background: #73d1bd;
+  background: -webkit-linear-gradient(to right, #7cd9c9, #7bd3d6);
+  background: linear-gradient(to right, #93c3d1, #356765);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #ffffff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+  transform: translateX(-20%);
+}
+
+.container.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+  transform: translateX(20%);
+}
+
+.social-container {
+  margin: 20px 0;
+}
+
+.social-container a {
+  border: 1px solid #dddddd;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+}
+
+.signup {
+  background: #f6f5f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  margin: -20px 0 50px;
+}
+
+.sign-h1 {
+  font-weight: bold;
+  margin: 0;
+}
+
+.sign-p {
+  font-size: 14px;
+  font-weight: 250;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  margin: 20px 0 30px;
+}
+
+/* code for services*/
+.services-container {
+  width: 90%;
+  margin: auto;
+}
+
+.section-heading {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.services-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.services-card {
+  width: 350px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s ease;
+  background-color: #ffffff9d;
+  border-radius: 15px;
+}
+
+.services-card:hover {
+  transform: translateY(-20px);
+}
+.services-card i {
+  font-size: 38px;
+  margin-bottom: 20px;
+  color: #3498db;
+}
+
+.services-card h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.services-card p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 768px) {
+  .services-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services-card {
+    width: 100%;
+  }
+}
+
+.about {
+  padding: 250px;
+  color: white;
+  text-align: center;
+  font-family: "Poppins";
+  background-image: url(/img/bg-5.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+ 
+}
+
+.mission {
+  padding: 250px;
+  color: white;
+  text-align: center;
+  font-family: "Poppins";
+  background-image: url(/img/bg-6.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
+
+.values {
+  padding: 250px;
+  color: white;
+  text-align: center;
+  font-family: "Poppins";
+  background-image: url(/img/values-bg.jpg);
+  background-size: cover;
+}
+
+.meet {
+  padding: 250px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-family: "Poppins";
+  background-image: url(/img/meet-bg-dark.jpg);
+  background-size: cover;
+}
+
+.whyzen {
+  padding: 250px;
+  color: white;
+  text-align: center;
+  font-family: "Poppins";
+  background-image: url(/img/zen-bg.jpg);
+  background-size: cover;
+}
+
+.story {
+  padding: 250px;
+  color: white;
+  text-align: center;
+  font-family: "Poppins";
+  background-image: url(/img/story-bg.jpg);
+  background-size: cover;
+
+}
+
+.group {
+  font-size: large;
 }
